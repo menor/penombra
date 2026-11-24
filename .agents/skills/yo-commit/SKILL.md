@@ -56,7 +56,9 @@ Add `!` after the scope for a breaking change, and a `BREAKING CHANGE: <impact>`
 
 ### Scopes
 
-The scope says where the change lives. Use one of: `catalogue`, `lists`, `accounts`, `api`, `db`, `data`, `mcp`, `ui`, `ci`, `agents`, `docs`. Leave the scope out when a change spans more than two. Add a scope to this list in the same commit that first needs it.
+The scope says where the change lives. Use one of: `catalogue`, `lists`, `accounts`, `api`, `db`, `data`, `mcp`, `ui`, `ci`, `agents`, `docs`. Leave the scope out when a change spans more than two.
+
+`commitlint.config.mjs` is the source of truth for types, scopes and the 72-character limit. The `commit-msg` hook and CI reject anything else. To add a scope, change `scope-enum` in the config and this list in the same commit that first needs it.
 
 ### Summary line
 
