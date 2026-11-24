@@ -10,6 +10,17 @@ You don't remember every skill, so ask.
 
 Before stating what a skill does or recommending a step be skipped, read that skill's SKILL.md: the summaries here are for orientation only.
 
+## Skill names in this repo
+
+One name must start one skill. Known clashes and their decisions:
+
+- **`code-review`**: Claude Code has a built-in `/code-review`, a different skill. Type `/mattpocock-skills:code-review` for the two-axis review this flow expects. The plugin's `/implement` and `/implement-spec` call it by the bare name `code-review`, so they may start the built-in one. Until they are fixed, run `/mattpocock-skills:code-review` yourself after them.
+- **`pr`**: replaced by `/yo-pr`.
+
+A skill installed outside this repo may overlap one named here. Use the one named here: it reads this repo's `docs/agents/` config.
+
+When a new clash appears, add it to this list with its decision.
+
 A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone, or a vocabulary layer that runs underneath.
 
 ## The main flow: idea → ship
@@ -27,11 +38,11 @@ The route most work travels. You have an idea and want it built.
      - **`/implement-spec`** for the whole spec in one run. It reads the tickets as a **task graph**, runs implementer subagents across the ready **frontier** in parallel, and lands everything on one **integration branch**. Reach for it when you'd rather orchestrate the build than drive each ticket yourself.
    - **No** → **`/implement`** right here, in the same context window.
 
-   Either way, the code gets built by driving **`/tdd`** (one red-green slice at a time) and closes out with **`/code-review`**, a two-axis review (Standards + Spec) of the diff. `/implement` runs both per ticket; `/implement-spec`'s implementers each drive `/tdd`, and it runs one `/code-review` over the integration branch. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/code-review`** on its own whenever you want to review a branch or PR against a fixed point.
+   Either way, the code gets built by driving **`/tdd`** (one red-green slice at a time) and closes out with **`/mattpocock-skills:code-review`**, a two-axis review (Standards + Spec) of the diff. `/implement` runs both per ticket; `/implement-spec`'s implementers each drive `/tdd`, and it runs one `/mattpocock-skills:code-review` over the integration branch. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/mattpocock-skills:code-review`** on its own whenever you want to review a branch or PR against a fixed point.
 
    When the work is ready to commit, **`/yo-commit`** splits it into Conventional Commits and waits for approval. When it goes up as a pull request, **`/yo-pr`** opens a draft with evidence, a merge-danger call and what was left out. You type both: the agent does not start them on its own. In this repo `/yo-pr` replaces the plugin's `/pr`. Don't use `/pr`.
 
-4. **`/retro`** closes the loop. After a build, and especially one that went sideways, it looks back over the session and suggests changes to the agent's **environment**, not the code: navigation pointers, automated checks, the coding standards `/code-review` enforces, steering files, tooling. Mechanical mistakes become deterministic checks; judgement calls become coding standards. The next build then starts from a better environment.
+4. **`/retro`** closes the loop. After a build, and especially one that went sideways, it looks back over the session and suggests changes to the agent's **environment**, not the code: navigation pointers, automated checks, the coding standards `/mattpocock-skills:code-review` enforces, steering files, tooling. Mechanical mistakes become deterministic checks; judgement calls become coding standards. The next build then starts from a better environment.
 
 ### Context hygiene
 
