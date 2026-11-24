@@ -68,7 +68,7 @@ Every target below is a draft. Set the final number after the first measurement.
 
 ## Build order
 
-Each phase ends with something that runs on the public URL. Do not start the next phase until the exit check passes.
+Each phase ends with something that runs on the public URL. Do not start the next phase until the exit check passes. Every exit check also includes: the README status shows the phase now starting.
 
 **Phase 0. Decisions (1 to 2 days)**
 - Confirm MusicBrainz data licence and Cover Art Archive terms for a public site.
