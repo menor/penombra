@@ -9,6 +9,8 @@ Read these before doing anything:
 
 Data findings and limits: `data-check/README.md`.
 
+Agent skills, their sources and how to fork one: `.agents/skills/README.md`.
+
 Plans live in `docs/plans/`, one folder per plan. Create them with `/yo-create-plan`.
 
 Setup: `pnpm install`. It also installs the `commit-msg` hook that runs commitlint.
