@@ -1,3 +1,6 @@
 allowBuilds:
   # The binary ships in a platform package. The `prepare` script installs the hooks.
   lefthook: false
+
+# Refuse package versions younger than 3 days. Set explicitly, so strict mode is on.
+minimumReleaseAge: 4320
