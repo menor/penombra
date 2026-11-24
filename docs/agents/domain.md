@@ -1,5 +1,7 @@
 # Domain Docs
 
+_Adapted from `setup-matt-pocock-skills/domain.md` in [mattpocock/skills](https://github.com/mattpocock/skills) 1.3.1, commit `49dd158`. MIT, see [LICENSE](LICENSE)._
+
 How the engineering skills should consume this repo's domain documentation when exploring the codebase.
 
 ## Before exploring, read these

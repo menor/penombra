@@ -1,5 +1,7 @@
 # Issue tracker: GitHub
 
+_Copied from `setup-matt-pocock-skills/issue-tracker-github.md` in [mattpocock/skills](https://github.com/mattpocock/skills) 1.3.1, commit `49dd158`. MIT, see [LICENSE](LICENSE)._
+
 Issues and specs for this repo live as GitHub issues. Use the `gh` CLI for all operations.
 
 ## Conventions

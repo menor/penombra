@@ -1,5 +1,7 @@
 # Triage Labels
 
+_Copied from `setup-matt-pocock-skills/triage-labels.md` in [mattpocock/skills](https://github.com/mattpocock/skills) 1.3.1, commit `49dd158`. MIT, see [LICENSE](LICENSE)._
+
 The skills speak in terms of five canonical triage roles. This file maps those roles to the actual label strings used in this repo's issue tracker.
 
 | Label in mattpocock/skills | Label in our tracker | Meaning                                  |
