@@ -9,5 +9,7 @@ export default {
       ['catalogue', 'lists', 'accounts', 'api', 'db', 'data', 'mcp', 'ui', 'ci', 'agents', 'docs'],
     ],
     'header-max-length': [2, 'always', 72],
+    'body-max-line-length': [2, 'always', 72],
+    'footer-max-line-length': [2, 'always', 72],
   },
 };
