@@ -1,0 +1,44 @@
+# Every label in the repo. .github/workflows/labels.yml syncs this file to
+# GitHub on push to main and deletes labels that are not listed here.
+
+# Triage states: docs/agents/triage-labels.md
+- name: needs-triage
+  color: "fbca04"
+  description: "Maintainer needs to evaluate this issue"
+- name: needs-info
+  color: "d876e3"
+  description: "Waiting on reporter for more information"
+- name: ready-for-agent
+  color: "0e8a16"
+  description: "Fully specified, ready for an AFK agent"
+- name: ready-for-human
+  color: "1d76db"
+  description: "Requires human implementation"
+- name: wontfix
+  color: "ffffff"
+  description: "This will not be worked on"
+
+# Categories
+- name: bug
+  color: "d73a4a"
+  description: "Something isn't working"
+- name: enhancement
+  color: "a2eeef"
+  description: "New feature or request"
+- name: accessibility
+  color: "f143ab"
+  description: "Barrier affecting people with disabilities"
+- name: documentation
+  color: "0075ca"
+  description: "Improvements or additions to documentation"
+
+# GitHub defaults
+- name: duplicate
+  color: "cfd3d7"
+  description: "This issue or pull request already exists"
+- name: invalid
+  color: "e4e669"
+  description: "This doesn't seem right"
+- name: question
+  color: "d876e3"
+  description: "Further information is requested"
