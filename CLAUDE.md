@@ -5,6 +5,7 @@ A visual synthwave and darkwave catalogue on MusicBrainz data, with lists and an
 Read these before doing anything:
 
 @CONTEXT.md
+@GLOSSARY.md
 @plan.md
 
 Data findings and limits: `data-check/README.md`.
