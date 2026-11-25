@@ -1,6 +1,6 @@
 # Penombra: context for a new session
 
-Read this file first. Then read `plan.md`. Written 12 November 2026.
+Read this file first. Then read `plan.md`. Written 12 November 2026. Shrunk 25 November 2026: scope, data facts and phases live in `plan.md`, terms in `GLOSSARY.md`, decisions in `docs/adr/`.
 
 ## What this is
 
@@ -10,23 +10,7 @@ Penombra is Catalan for half-light. The word fits both genres: sunset and night.
 
 **The app must be demoable in one click, with no sign-up, no hardware and no external service.**
 
-## Product
-
-### Scope in
-1. Guest browsing with no sign-up.
-2. Cover grid and dense table. Filters: tag, year, country, label. Live counts.
-3. Release timeline by year, split by core tag.
-4. Artist pages: releases, tags, band members and side projects where present, links to Bandcamp, Discogs and Spotify.
-5. Lists: public or private. Manual add (for example "Owned", "Want to listen", "Favourite darkwave albums"). Public share pages. Optional link on each entry.
-6. List analytics: decade, label, country, tag mix. Compare two lists.
-7. MCP server with member-scoped tools.
-8. Sign up, sign in, delete account.
-
-### Scope out (with reasons)
-- **Credits explorer.** Data check: 1 of 26 sampled releases had a producer or mixer credit.
-- **Imports from Plex, Jellyfin or Bandcamp.** Matching messy libraries costs about a third of the build. It also limits users to those with the services. Lists are manual.
-- **Wider genre scope.** Synthwave, darkwave and coldwave stay the core. A wider catalogue loses its identity.
-- **Real-time, comments, follows, recommendations, native apps, audio playback.**
+Scope in and out, with reasons: `plan.md`.
 
 ### A user flow (the story the demo must support)
 Anna, a darkwave fan, opens the link and clicks "Try as guest". She filters the table by year and country, opens an artist, and sees releases, tags and a Bandcamp link. She adds release groups to a list called "Night drive 2". She signs up to keep it and makes it public. She shares the page. Later she connects Claude and asks: "Which labels appear most in my Favourites list?" Claude calls the MCP tools and answers from her data.
@@ -37,34 +21,17 @@ Anna, a darkwave fan, opens the link and clicks "Try as guest". She filters the 
 - **A clone of record.club.** Reads as unoriginal, and the social features are mostly create, read, update, delete (CRUD).
 - **Recommender.** Out of scope.
 
-## Data facts
+## Data consequences
 
-Measured on 11 November 2026. Full detail in `data-check/README.md`.
-
-| Fact | Result |
-|---|---|
-| Core tags | up to about 2,450 artists and 18,000 release groups |
-| Estimated size | under 1M rows (rough, 18 artists) |
-| Date present | 26 of 26 releases |
-| Country present | 24 of 26 |
-| Real label | 13 of 26 (synthwave 2 of 10) |
-| Person credit | 1 of 26 |
-| Artist-level Bandcamp link | 54 of 69 (78%) |
-| Release-level Bandcamp link | 24 of 69 (35%) |
-| Cover art | 127 of 136 (93%) |
-| Artist-to-artist relationships | 11 of 26, mostly band membership |
-
-Consequences:
+The measured facts are in `plan.md` and `data-check/README.md`. They lead to these rules:
 - The catalogue is small. Run a **labelled synthetic stress test** (5M or more generated rows) to get a performance claim. Never present synthetic numbers as real data.
 - Show a "Buy" link only when a Bandcamp URL exists. Otherwise offer a Bandcamp search link, labelled as a search. Let guests and members attach an entry link to an entry.
 - Plan a fallback tile for the 7 to 10% of releases without cover art.
 - The true tail is unmeasured. The search API rejects offsets of 500 and above. Exact counts need the data dumps.
 
-## Decisions and reasons
+## Decisions without an ADR
 
-Every hard-to-reverse decision gets an ADR in `docs/adr/`. Each states the trade-off and a revisit trigger. Data source, frontend, API, search, sessions and the data licence are there. Terms are defined in `GLOSSARY.md`.
-
-Decisions without an ADR:
+Every hard-to-reverse decision gets an ADR in `docs/adr/`. Each states the trade-off and a revisit trigger. These decisions are easy to reverse, so they stay here:
 
 | Decision | Chosen | Rejected | Reason and cost |
 |---|---|---|---|
@@ -88,37 +55,14 @@ Decisions without an ADR:
 - Respect MusicBrainz: about 1 request per second, a real User-Agent, and licence terms.
 - Do not send personal details, such as an email address, in request headers.
 
-## What to do first
-
-Phase 0 in `plan.md`:
-1. ~~Confirm the MusicBrainz data licence and Cover Art Archive terms for a public site.~~ Done 25 November 2026: `docs/adr/0007-non-commercial-musicbrainz-tags-and-cover-art.md`.
-2. Choose: Node framework (Hono, Express or Fastify), database access library, hosting provider, MCP SDK.
-3. ~~Write the first five ADRs in `docs/adr/`.~~ Done: ADRs 0001 to 0007.
-
-Then Phase 1: the walking skeleton. Deployed, with CI and error tracking, before any feature.
-
 ## Things not verified
 
-- Whether a third-party site may show Cover Art Archive images.
+Domain availability and Cover Art Archive display rights are open items in `plan.md`.
 - How often MusicBrainz publishes the data dumps.
-- Domain availability beyond a registry lookup: `.org`, `.club` and `.cat` looked free. `.fm`, `.co` and `.es` were not checkable. Handles `penombra` on GitHub, Bluesky and Instagram are taken, and `.com`, `.app`, `.dev`, `.net`, `.xyz`, `.studio` and `.io` are registered.
 - The data size estimate and the tail coverage.
 - Claims about TanStack Start in ADR 0003 beyond the sources listed below.
 - The 5 to 6 week estimate in `plan.md`. It is a guess from phase counts.
 - Whether the Catalan meaning and phrasing are natural.
-
-## Files in this folder
-
-| File | Purpose |
-|---|---|
-| `CLAUDE.md` | Loads this context in a new session |
-| `CONTEXT.md` | This file |
-| `GLOSSARY.md` | Domain terms and the words to avoid |
-| `plan.md` | Success criteria S1 to S15, build phases 0 to 8, open items |
-| `data-check/` | Sampling scripts, raw JSON, README with results and limits |
-| `docs/adr/` | Architecture decision records |
-| `docs/plans/` | One folder per plan, created with `/yo-create-plan` |
-| `.agents/skills/` | Agent skills for plans, commits and pull requests |
 
 ## Sources
 
