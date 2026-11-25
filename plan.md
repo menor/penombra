@@ -13,15 +13,16 @@ A visual catalogue of synthwave and darkwave, built on MusicBrainz. Fans browse 
 1. Guest browsing. No sign-up needed.
 2. Cover grid and dense table. Filters: tag, year, country, label. Live counts.
 3. Release timeline by year, split by core tag.
-4. Artist pages: releases, tags, band members and side projects where present, links.
+4. Artist pages: releases, tags, band members and side projects where present, links to Bandcamp, Discogs and Spotify.
 5. Lists: public or private. Manual add. Public share pages. Optional link on each entry.
 6. List analytics: decade, label, country, tag mix. Compare two lists.
-7. MCP server with scoped tools.
+7. MCP server with member-scoped tools.
 8. Sign up, sign in, delete account.
 
 **Out**
 - Credits explorer. Data check: 1 of 26 sampled releases had a producer or mixer credit.
-- Imports from Plex, Jellyfin or Bandcamp.
+- Imports from Plex, Jellyfin or Bandcamp. Matching messy libraries costs about a third of the build. It also limits users to those with the services. Lists are manual.
+- Wider genre scope. Synthwave, darkwave and coldwave stay the core. A wider catalogue loses its identity.
 - Real-time features, comments, follows, recommendations, native apps, audio playback.
 
 ## Data facts measured on 11 November 2026
@@ -122,7 +123,7 @@ Total: about 5 to 6 weeks of full-time work. The earlier 3 to 4 week guess assum
 
 ## Open items
 
-1. ~~Name.~~ Settled: Penombra. Handles `penombra` on GitHub, Bluesky and Instagram are taken. `.com`, `.app`, `.dev`, `.net`, `.xyz`, `.studio`, `.io` are registered. `.org`, `.club`, `.cat` looked free on 12 Nov 2026 (unconfirmed). Custom domain is optional. Default: a subdomain of `menor.pro`.
+1. ~~Name.~~ Settled: Penombra. Handles `penombra` on GitHub, Bluesky and Instagram are taken. `.com`, `.app`, `.dev`, `.net`, `.xyz`, `.studio`, `.io` are registered. `.org`, `.club`, `.cat` looked free on 12 Nov 2026 (unconfirmed). `.fm`, `.co` and `.es` were not checkable. Custom domain is optional. Default: a subdomain of `menor.pro`.
 2. Hosting provider and monthly budget.
 3. ~~Exact licence terms for MusicBrainz data and covers.~~ Checked 25 November 2026, see ADR 0007. Still open: whether a third-party site may show Cover Art Archive images.
 4. Whether to add a Redis search cache. Only if it shows in the latency numbers.
