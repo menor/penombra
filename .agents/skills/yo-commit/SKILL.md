@@ -24,7 +24,7 @@ One commit is one change a reviewer can read, revert or cherry-pick alone.
    1. Stage explicit paths. Use `git add -p` for files with mixed changes. Never `git add .`, `git add -A` or `git commit -a`.
    2. Run `git diff --cached --check` and read `git diff --cached --stat` in their own command, not chained into the commit. If `--check` prints anything, stop and fix it before committing. Look for debug output, secrets, personal data and unrelated files.
    3. Run the verification command when the commit touches code. Report the real result.
-   4. Commit. Never use `--no-verify`. If a hook fails, fix the cause and make a new commit attempt. Never amend a commit that already existed before this session.
+   4. Commit. Never pipe `git commit` into another command, such as `tail`: the pipe hides the hook's exit code. Read `$?` right after the commit. Never use `--no-verify`. If a hook fails, fix the cause and make a new commit attempt. Never amend a commit that already existed before this session.
 
 5. **Report.** List each commit hash and subject, the checks run and their results, and what remains uncommitted. Do not push unless the user asks.
 
