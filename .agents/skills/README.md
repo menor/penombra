@@ -15,6 +15,7 @@ A plugin skill becomes a `yo-*` skill only when evidence shows it must change. U
 | [`yo-commit`](yo-commit/SKILL.md) | Splits work into Conventional Commits and waits for approval before committing | none |
 | [`yo-create-plan`](yo-create-plan/SKILL.md) | Writes a plan file in `docs/plans/` | none. Overlaps with `to-spec`; not decided yet |
 | [`yo-pr`](yo-pr/SKILL.md) | Opens a draft pull request with evidence, merge danger and what was left out | `pr` |
+| [`yo-research`](yo-research/SKILL.md) | Researches primary sources. Confirms any finding that rules out an option with a second method | `research` |
 
 Each skill's `CREDITS.md` lists the sources it borrowed from, with their licences.
 
@@ -25,11 +26,13 @@ Each skill's `CREDITS.md` lists the sources it borrowed from, with their licence
 | Plan | `wayfinder`, `grill-with-docs`, `to-spec`, `to-tickets` |
 | Build | `implement`, `tdd`, `code-review` |
 | Improve the workflow | `retro` |
-| As needed | `research`, `prototype`, `wizard`, `diagnosing-bugs`, `triage`, `handoff` |
+| As needed | `prototype`, `wizard`, `diagnosing-bugs`, `triage`, `handoff` |
 | Called by other skills | `grilling`, `domain-modeling`, `codebase-design`, `writing-for-agents` |
 | Once per repo | `setup-matt-pocock-skills` |
 
-Not used: `pr`, replaced by `yo-pr`, and `ask-matt`, replaced by `yo-ask`.
+Not used: `pr`, replaced by `yo-pr`, `ask-matt`, replaced by `yo-ask`, and `research`, replaced by `yo-research`.
+
+`wayfinder` calls `research` by name. A map's Notes must name `yo-research` for its research tickets.
 
 ## Turning a plugin skill into a `yo-*` skill
 
