@@ -40,7 +40,7 @@ Every hard-to-reverse decision gets an ADR in `docs/adr/`. Each states the trade
 | Charts | Always ship a table alternative | Charts only | Accessibility. More code |
 | Testing | Vitest for logic, Playwright for flows | Cypress, Jest | Fast unit runs, real-browser flow tests |
 | CI/CD | GitHub Actions | Other CI | Lives next to the repo |
-| Errors | Sentry (or OpenTelemetry) | None | Errors traced from alert to fix |
+| Errors | Sentry free plan: 2 projects (web, API), errors at 100%, traces at 10%, release per git SHA, source maps from CI. No personal data: no emails, IPs, cookies, request bodies or list text. Replay off | OpenTelemetry with Grafana Cloud; self-hosted SigNoz or GlitchTip | Shortest path to S11 at $0. Self-hosting shares the VPS's failure modes. Cost: Sentry SDK lock-in, email-only alerts. Revisit if errors pass 5,000 a month or alerts need another channel. Options: [research note](https://github.com/menor/penombra/blob/research/error-tracking/research/error-tracking.md) |
 | Domain | A subdomain of `menor.pro` | Custom domain | A custom domain is optional. Hosting: ADR 0008 |
 
 ## Working rules
