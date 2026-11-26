@@ -18,6 +18,23 @@
   color: "ffffff"
   description: "This will not be worked on"
 
+# Wayfinder maps and their decision tickets: docs/agents/issue-tracker.md
+- name: wayfinder:map
+  color: "5319e7"
+  description: "Wayfinder map: index of decisions toward one destination"
+- name: wayfinder:research
+  color: "c5def5"
+  description: "Wayfinder ticket: research by an agent"
+- name: wayfinder:prototype
+  color: "c5def5"
+  description: "Wayfinder ticket: rough artifact to react to"
+- name: wayfinder:grilling
+  color: "c5def5"
+  description: "Wayfinder ticket: decision made in conversation"
+- name: wayfinder:task
+  color: "c5def5"
+  description: "Wayfinder ticket: manual work that unblocks a decision"
+
 # Categories
 - name: bug
   color: "d73a4a"
