@@ -73,7 +73,7 @@ Each phase ends with something that runs on the public URL. Do not start the nex
 
 **Phase 0. Decisions (1 to 2 days)**
 - ~~Confirm MusicBrainz data licence and Cover Art Archive terms for a public site.~~ Done: ADR 0007.
-- Pick: Node framework, database access library, MCP SDK. ~~Hosting provider.~~ Done: ADR 0008.
+- Pick: database access library. ~~Node framework.~~ Done: ADR 0009. ~~MCP SDK.~~ Done: `CONTEXT.md` table. ~~Hosting provider.~~ Done: ADR 0008.
 - ~~Write the first five ADRs in `docs/adr/`.~~ Done: ADRs 0001 to 0007.
 - Exit: decisions written down. Name chosen.
 
