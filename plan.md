@@ -73,7 +73,7 @@ Each phase ends with something that runs on the public URL. Do not start the nex
 
 **Phase 0. Decisions (1 to 2 days)**
 - ~~Confirm MusicBrainz data licence and Cover Art Archive terms for a public site.~~ Done: ADR 0007.
-- Pick: Node framework, database access library, hosting provider, MCP SDK.
+- Pick: Node framework, database access library, MCP SDK. ~~Hosting provider.~~ Done: ADR 0008.
 - ~~Write the first five ADRs in `docs/adr/`.~~ Done: ADRs 0001 to 0007.
 - Exit: decisions written down. Name chosen.
 
@@ -124,6 +124,6 @@ Total: about 5 to 6 weeks of full-time work. The earlier 3 to 4 week guess assum
 ## Open items
 
 1. ~~Name.~~ Settled: Penombra. Handles `penombra` on GitHub, Bluesky and Instagram are taken. `.com`, `.app`, `.dev`, `.net`, `.xyz`, `.studio`, `.io` are registered. `.org`, `.club`, `.cat` looked free on 12 Nov 2026 (unconfirmed). `.fm`, `.co` and `.es` were not checkable. Custom domain is optional. Default: a subdomain of `menor.pro`.
-2. Hosting provider and monthly budget.
+2. ~~Hosting provider and monthly budget.~~ Settled: one OVHcloud VPS-1, cap €10 a month with VAT. See ADR 0008.
 3. ~~Exact licence terms for MusicBrainz data and covers.~~ Checked 25 November 2026, see ADR 0007. Still open: whether a third-party site may show Cover Art Archive images.
 4. Whether to add a Redis search cache. Only if it shows in the latency numbers.

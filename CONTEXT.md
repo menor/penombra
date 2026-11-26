@@ -41,7 +41,7 @@ Every hard-to-reverse decision gets an ADR in `docs/adr/`. Each states the trade
 | Testing | Vitest for logic, Playwright for flows | Cypress, Jest | Fast unit runs, real-browser flow tests |
 | CI/CD | GitHub Actions | Other CI | Lives next to the repo |
 | Errors | Sentry (or OpenTelemetry) | None | Errors traced from alert to fix |
-| Hosting and domain | Undecided. Default: a subdomain of `menor.pro` | Custom domain | A custom domain is optional |
+| Domain | A subdomain of `menor.pro` | Custom domain | A custom domain is optional. Hosting: ADR 0008 |
 
 ## Working rules
 
