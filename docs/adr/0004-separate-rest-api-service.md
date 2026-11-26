@@ -15,4 +15,4 @@ The backend is its own TypeScript service with a REST interface, apart from the 
 ## Consequences
 
 - The MCP server can call the same service, so the catalogue and list rules live in one place.
-- The Node framework is not chosen yet: Hono, Express or Fastify. Phase 0 of `plan.md` picks it.
+- The Node framework is Hono. See ADR 0009.
