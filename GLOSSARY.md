@@ -20,6 +20,10 @@ _Avoid_: record, album (an album is one type of release group)
 One edition of a release group, with its own country, label, date and cover.
 _Avoid_: pressing, version
 
+**Cover**:
+The front image of a release, shown for its release group. Some release groups have none.
+_Avoid_: artwork, album art, thumbnail
+
 **Label**:
 The company that published a release. A release group can have several labels through its releases.
 _Avoid_: publisher, imprint
