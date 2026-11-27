@@ -71,11 +71,11 @@ Every target below is a draft. Set the final number after the first measurement.
 
 Each phase ends with something that runs on the public URL. Do not start the next phase until the exit check passes. Every exit check also includes: the README status shows the phase now starting.
 
-**Phase 0. Decisions (1 to 2 days)**
+**Phase 0. Decisions (1 to 2 days)** Done 27 November 2026.
 - ~~Confirm MusicBrainz data licence and Cover Art Archive terms for a public site.~~ Done: ADR 0007.
-- Pick: database access library. ~~Node framework.~~ Done: ADR 0009. ~~MCP SDK.~~ Done: `CONTEXT.md` table. ~~Hosting provider.~~ Done: ADR 0008.
-- ~~Write the first five ADRs in `docs/adr/`.~~ Done: ADRs 0001 to 0007.
-- Exit: decisions written down. Name chosen.
+- Pick: ~~database access library.~~ Done: ADR 0010. ~~Node framework.~~ Done: ADR 0009. ~~MCP SDK.~~ Done: `CONTEXT.md` table. ~~Hosting provider.~~ Done: ADR 0008.
+- ~~Write the first five ADRs in `docs/adr/`.~~ Done: ADRs 0001 to 0010.
+- ~~Exit: decisions written down. Name chosen.~~ Passed.
 
 **Phase 1. Walking skeleton (3 to 4 days)**
 - Repo, TypeScript API, PostgreSQL, empty TanStack Router app, one page that reads one row.

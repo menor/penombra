@@ -6,7 +6,7 @@ Fans will browse releases by tag, year, country and label, and keep public or pr
 
 ## Status
 
-**Phase 0 of 8: decisions. There is no app yet.** The phases, their exit checks and the success criteria are in [`plan.md`](plan.md). I update this section at the end of each phase.
+**Phase 1 of 8: walking skeleton. There is no app yet.** The phases, their exit checks and the success criteria are in [`plan.md`](plan.md). I update this section at the end of each phase.
 
 ## What to look at today
 
